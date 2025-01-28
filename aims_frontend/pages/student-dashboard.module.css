@@ -76,6 +76,21 @@
     transform: scale(1.1); /* Slight zoom effect */
   }
 
+  .navbar .requestedCourses {
+    font-size: 1.2em;
+    cursor: pointer;
+    background: linear-gradient(45deg, #4a90e2, #357ab8); /* Gradient button */
+    padding: 10px 20px;
+    border-radius: 20px; /* Pill-shaped button */
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar .requestedCourses:hover {
+    background: linear-gradient(45deg, #357ab8, #2a5298);
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+
   .navbar .coursesButton {
     font-size: 1.2em;
     cursor: pointer;
@@ -88,22 +103,6 @@
   }
   
   .navbar .coursesButton:hover {
-    background: linear-gradient(45deg, #357ab8, #2a5298);
-    transform: scale(1.1); /* Slight zoom effect */
-  }
-
-  .navbar .enrollmentRequestsButton {
-    font-size: 1.2em;
-    cursor: pointer;
-    background: linear-gradient(45deg, #4a90e2, #357ab8); /* Gradient button */
-    padding: 10px 20px;
-    border-radius: 20px; /* Pill-shaped button */
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    margin-left: 10px;
-  }
-  
-  .navbar .enrollmentRequestsButton:hover {
     background: linear-gradient(45deg, #357ab8, #2a5298);
     transform: scale(1.1); /* Slight zoom effect */
   }
@@ -213,39 +212,91 @@
     resize: vertical;
   }
 
-  .acceptButton {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
+  .enrolledCourses {
+    margin-top: 30px;
+  }
+  
+  .enrolledCourses h2 {
+    font-size: 1.5em; /* Reduce font size */
+    color: #ffffff;
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px;
+  }
+  
+  .enrolledCourses ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .enrolledCourses li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #444;
     border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .acceptButton:hover {
-    background-color: #388e3c;
-    transform: scale(1.05);
-  }
-  
-  .rejectButton {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .rejectButton:hover {
-    background-color: #d32f2f;
-    transform: scale(1.05);
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #e0e0e0;
   }
 
-  .viewEnrolledButton {
+  .enrolledCourses li h3 {
+    margin: 15px 0 15px 0; /* Add top and bottom margin for spacing */
+    font-size: 1.5em;
+    text-align: left; /* Align text to the left */
+  }
+
+  .enrolledCourses li p {
+    margin: 10px 0 15px 0; /* Add more bottom margin for spacing */
+    text-align: left; /* Align text to the left */
+  }
+
+  .slidingBar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #1e1e1e;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .slidingBar.show {
+    right: 0;
+  }
+  
+  .slidingBar h2 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .slidingBar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .slidingBar li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #e0e0e0;
+  }
+  
+  .slidingBar li h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.5em;
+  }
+  
+  .slidingBar li p {
+    margin: 10px 0 15px 0;
+  }
+
+  .requestButton {
     margin-left: 10px;
     padding: 5px 10px;
     background-color: #1e88e5;
@@ -256,23 +307,7 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
-  .viewEnrolledButton:hover {
+  .requestButton:hover {
     background-color: #1565c0;
-    transform: scale(1.05);
-  }
-
-  .backButton {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background-color: #25282a;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .backButton:hover {
-    background-color: #34383d;
     transform: scale(1.05);
   }

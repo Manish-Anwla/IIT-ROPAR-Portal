@@ -37,6 +37,10 @@ export default function SignInPage() {
       setVerificationStatus('OTP verified successfully!');
       if (role === 'student') {
         router.push('/student-dashboard');
+        router.push({
+          pathname: '/student-dashboard',
+          query: { email: email },
+        });
       } else if (role === 'prof') {
         router.push({
           pathname: '/prof-dashboard',
