@@ -23,7 +23,7 @@ export default function SignInPage() {
         setVerificationStatus('');
         alert('OTP sent to your email.');
       } else {
-        alert('Email not found in the database');
+        alert(response.message);
       }
     } catch (error) {
       console.error('Error sending OTP:', error);

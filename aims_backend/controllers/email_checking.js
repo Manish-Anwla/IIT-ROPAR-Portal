@@ -17,7 +17,7 @@ export const check_email = async (req, res) => {
     // console.log(`Database query result: ${emailRecord}`);
 
     if (!emailRecord) {
-      return res.status(404).json({ message: 'Email not found', role: 'none' });
+      return res.status(404).json({ message: 'Email not found in the database', role: 'none' });
     }
 
     const otp = Math.floor(100000 + Math.random() * 900000);

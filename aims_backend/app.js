@@ -3,6 +3,9 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import router from "./routes/routes.js";
 import DBconnection from './database/db.js';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -24,6 +27,6 @@ app.get('/', (req, res) => {
 
 DBconnection();
 
-app.listen(8000, () => {
+app.listen(process.env.PORT, () => {
     console.log("server is listening on port 8000"); 
 });

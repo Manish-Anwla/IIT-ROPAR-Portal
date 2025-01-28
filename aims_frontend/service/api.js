@@ -25,6 +25,9 @@ export async function sendEmail(email) {
 
     return { exists: true, role: data.type, otp: data.otp }; // Assuming the backend sends the OTP back.
   } catch (error) {
+    if (error.response && error.response.status === 404) {
+      return { exists: false, message: 'Email not found in the database' };
+    }
     console.error('There was a problem with the axios operation:', error);
     throw error;
   }
