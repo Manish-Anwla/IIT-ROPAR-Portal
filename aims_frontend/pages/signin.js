@@ -38,7 +38,10 @@ export default function SignInPage() {
       if (role === 'student') {
         router.push('/student-dashboard');
       } else if (role === 'prof') {
-        router.push('/prof-dashboard');
+        router.push({
+          pathname: '/prof-dashboard',
+          query: { email: email },
+        });
       }
     } else {
       setVerificationStatus('Invalid OTP. Please try again.');
